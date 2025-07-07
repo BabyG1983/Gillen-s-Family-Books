@@ -1,0 +1,80 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Book, Facebook, Instagram} from "lucide-react";
+import { icons } from "lucide-react";
+
+// Get TikTok icon dynamically
+const TikTokIcon = icons["tiktok" as keyof typeof icons];
+
+const Footer = () => {
+  return (
+    <footer className="bg-gradient-soft border-t">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo and Mission */}
+          <div className="col-span-1 md:col-span-2">
+            <Link to="/" className="flex items-center space-x-2 font-bold text-xl mb-4">
+              <Book className="h-8 w-8 text-primary" />
+              <span className="bg-gradient-warm bg-clip-text text-transparent">
+                Gillen's Family Books
+              </span>
+            </Link>
+            <p className="text-muted-foreground mb-4 max-w-md">
+              Creating uplifting, educational, and affirming books that help children and families 
+              have fun, live life, and make a difference.
+            </p>
+            <p className="text-sm font-medium text-primary">
+              Have Fun. Live Life. Make a Difference.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Quick Links</h3>
+            <div className="space-y-2">
+              <Link to="/about" className="block text-muted-foreground hover:text-primary transition-colors">
+                About Us
+              </Link>
+              <Link to="/books" className="block text-muted-foreground hover:text-primary transition-colors">
+                Our Books
+              </Link>
+              <Link to="/blog" className="block text-muted-foreground hover:text-primary transition-colors">
+                Blog
+              </Link>
+              <Link to="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          {/* Connect With Us */}
+          <div>
+            <h3 className="font-semibold mb-4">Connect With Us</h3>
+            <div className="flex space-x-2">
+              <Button variant="outline" size="icon" className="rounded-full">
+                <Facebook className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" className="rounded-full">
+                <Instagram className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="icon" className="rounded-full">
+                <TikTokIcon className="h-4 w-4" />
+              </Button>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Follow us for updates, parenting tips, and behind-the-scenes stories!
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t mt-8 pt-8 text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2024 Gillen's Family Books. All rights reserved. Made with ❤️ for families everywhere.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
